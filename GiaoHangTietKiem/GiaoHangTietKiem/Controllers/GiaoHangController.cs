@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace GiaoHangTietKiem.Controllers
 {
-    public class GiaoHangController : Controller
+    public class GiaoHangController : BaseController
     {
         // GET: GiaoHang
         public ActionResult Index()
@@ -46,29 +46,30 @@ namespace GiaoHangTietKiem.Controllers
             return View();
         }
 
-        public ActionResult Login()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(TaiKhoan model)
-        {
-            if (!string.IsNullOrEmpty(model.TenTK))
-            {
-                GiaoHangContext data = new GiaoHangContext();
-                TaiKhoan tk = data.TaiKhoans.SingleOrDefault(p => p.TenTK.Equals(model.TenTK) && p.MatKhau.Equals(model.MatKhau));
-                if (tk != null)
-                {
-                    return View("Index");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "mk sai");
-                }
-            }
-            return View(model);
-        }
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Login(TaiKhoan model)
+        //{
+        //    if (!string.IsNullOrEmpty(model.TenTK))
+        //    {
+        //        GiaoHangContext data = new GiaoHangContext();
+        //        TaiKhoan tk = data.TaiKhoans.SingleOrDefault(p => p.TenTK.Equals(model.TenTK) && p.MatKhau.Equals(model.MatKhau));
+        //        if (tk != null)
+        //        {
+        //            Session.Add("FullName", tk.TenTK);
+        //            return View("Index");
+        //        }
+        //        else
+        //        {
+        //            ModelState.AddModelError("", "mk sai");
+        //        }
+        //    }
+        //    return View(model);
+        //}
         public ActionResult Create()
         {
             ViewBag.Message = "Your application description page.";

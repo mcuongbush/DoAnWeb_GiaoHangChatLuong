@@ -1,5 +1,6 @@
 ﻿using Common1;
 using GiaoHangTietKiem.App_Start;
+using GiaoHangTietKiem.Controllers.Model;
 using GiaoHangTietKiem.Models;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,30 @@ namespace GiaoHangTietKiem.Controllers
 {
     public class LoginController : Controller
     {
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginModel model)
+        {
+            TaiKhoan tk = Dataprovider.Instance.DB.TaiKhoans.SingleOrDefault(p => p.TenTK.Equals(model.UserName) && p.MatKhau.Equals(model.Password));
+            if (tk != null)
+            {
+                var userSession = new UserLogin();
+                userSession.UserName = tk.TenTK;
+                userSession.UserID = tk.MaNV;
+                Session.Add(Common.Common.USER_SESSION, userSession);
+                Session["UserName"] = tk.TenTK;
+                return RedirectToAction("Index", "GiaoHang");
+            }
+            else
+            {
+                ModelState.AddModelError("", "mk sai");
+            }
+            return View();
+        }
         public ActionResult Register()
         {
             return View();
