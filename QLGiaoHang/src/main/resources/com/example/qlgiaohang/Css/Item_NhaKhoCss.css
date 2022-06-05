@@ -1,0 +1,12 @@
+.Kho_item{
+    -fx-background-color:#0D8545;
+    -fx-border-width: 2px;
+    -fx-border-color:  #94b8b8;
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1),10.0,0,0,10.0);
+}
+.Kho_item:hover{
+    -fx-background-color: #29af67;
+    -fx-border-width: 2px;
+    -fx-border-color: #89d3d3;
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1),10.0,0,0,10.0);
+}

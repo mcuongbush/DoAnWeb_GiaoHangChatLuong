@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#Click_Item" prefHeight="60.0" prefWidth="600.0" styleClass="Card" stylesheets="@../Css/ItemHd_NhaKhoCss.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlgiaohang.Item_QuanLyModel">
+   <children>
+      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/parcels.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="SoHD" text="HD000001">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/schedule.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </ImageView>
+      <Label fx:id="NgayNhap" text="27/03/2022">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/money.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </ImageView>
+      <Label fx:id="TongTien" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" text="20000000">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="MaCTVC" minHeight="-Infinity" minWidth="-Infinity" prefWidth="0.0" text="20000000">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="LVC" fitHeight="40.0" fitWidth="40.0" layoutX="270.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/LVC01.png" />
+         </image>
+      </ImageView>
+      <Line endX="-36.10710906982422" endY="0.5928802490234375" startX="-12.014216423034668" startY="0.592883288860321" />
+      <ImageView fitHeight="50.0" fitWidth="40.0" layoutX="270.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/warehouse.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="NhaKho" layoutX="311.0" layoutY="30.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" text="Đồng Nai">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="5.0" />
+         </HBox.margin>
+      </Label>
+      <FontAwesomeIconView glyphName="CHECK" onMouseClicked="#XuatKho" size="1.5em" styleClass="check" />
+   </children>
+   <padding>
+      <Insets left="15.0" />
+   </padding>
+</HBox>

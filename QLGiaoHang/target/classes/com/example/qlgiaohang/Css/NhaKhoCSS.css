@@ -1,0 +1,65 @@
+.Kho_item{
+    -fx-background-color:#0D8545;
+    -fx-border-width: 2px;
+    -fx-border-color:  #94b8b8;
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1),10.0,0,0,10.0);
+}
+.Edit_vbox{
+    -fx-background-color:#FFF;
+    -fx-background-radius: 10;
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1),10.0,0,0,10.0);
+}
+
+.textf{
+    -fx-border-color:  #1ad1ff;
+    -fx-border-width:  0px 0px 2px 0px;
+    -fx-background-color: -fx-control-inner-background;
+    -fx-background-insets: 0;
+    -fx-padding: 1 3 1 3;
+}
+
+.Btnthem{
+    -fx-background-color: #47d147;
+    -fx-text-fill: #ffff;
+    -fx-background-radius: 10px;
+}
+.Btnsua{
+    -fx-background-color:#1ad1ff;
+    -fx-text-fill: #ffff;
+    -fx-background-radius: 10px;
+}
+.Btnxoa{
+    -fx-background-color:#ff5c33;
+    -fx-text-fill: #ffff;
+    -fx-background-radius: 10px;
+}
+.Btnthem:hover{
+    -fx-text-fill: #47d147;
+    -fx-background-color:#fff;
+    -fx-border-color: #47d147;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-radius: 0px;
+}
+.Btnsua:hover{
+    -fx-text-fill: #1ad1ff;
+    -fx-background-color:#fff;
+    -fx-border-color: #1ad1ff;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-radius: 0px;
+}
+.Btnxoa:hover{
+    -fx-text-fill: #ff5c33;
+    -fx-background-color:#fff;
+    -fx-border-color: #ff5c33;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-radius: 0px;
+}
+.close{
+    -fx-fill: #5e5e5e;
+}
+.close:hover{
+    -fx-fill: #ff6666;
+}

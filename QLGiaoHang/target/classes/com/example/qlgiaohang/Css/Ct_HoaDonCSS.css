@@ -1,0 +1,19 @@
+.Edit_vbox{
+    -fx-background-radius: 20px;
+}
+.white_Box{
+    -fx-border-color: #fff;
+}
+.Btn{
+    -fx-background-color:#6699ff;
+    -fx-text-fill: #ffff;
+    -fx-background-radius: 10px;
+}
+.Btn:hover{
+    -fx-text-fill: #6699ff;
+    -fx-background-color:transparent;
+    -fx-border-color: #6699ff;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-radius: 10px;
+}

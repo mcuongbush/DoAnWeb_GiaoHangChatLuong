@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="300.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlgiaohang.Item_TheoDoiModel">
+   <children>
+      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/schedule.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Time" text="07/05 16:34">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </Label>
+      <Separator orientation="VERTICAL" prefHeight="200.0">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </Separator>
+      <Label fx:id="Message" prefWidth="130.0" text="Đơn hàng đã đến kho Đồng Nai" wrapText="true">
+         <HBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </HBox.margin>
+      </Label>
+   </children>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+</HBox>

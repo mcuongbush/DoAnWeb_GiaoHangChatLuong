@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="750.0" style="-fx-background-color: #FFFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlgiaohang.HoaDonModel">
+   <children>
+      <Label layoutX="14.0" layoutY="20.0" text="Hóa Đơn Vận Chuyển" textFill="#3c3c3c">
+         <font>
+            <Font name="Times New Roman Bold" size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="25.0" layoutY="49.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="700.0" style="-fx-background-color: #eaebea;">
+         <children>
+            <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="175.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/box.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="-5.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="TongDon" text="500000" textFill="#0b70eb">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Tổng Đơn">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="175.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/LVC01.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="-5.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="DangGiao" text="250000" textFill="#04aaeb">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Đang Giao">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="185.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="175.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/received.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="-5.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="HoanThanh" text="250000" textFill="#e51e72">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Calibri" size="26.0" />
+                     </font>
+                  </Label>
+                  <Label text="Hoàn Thành">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="360.0" layoutY="10.0" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="175.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/budget.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="-5.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Label fx:id="TongTien" text="500000VNĐ" textFill="#09eb49">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Calibri" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="Tiền">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="163.0" prefHeight="50.0" prefWidth="700.0" style="-fx-background-color: #eaebea;">
+         <children>
+            <Label text="Trạng Thái">
+               <HBox.margin>
+                  <Insets left="20.0" right="40.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="27.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="90.0" text="Số Hợp Đồng">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="27.0" prefWidth="60.0" text="Ngày Lập">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="122.0" layoutY="27.0" prefWidth="50.0" text="Số PGH">
+               <HBox.margin>
+                  <Insets right="40.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="178.0" layoutY="27.0" prefWidth="65.0" text="Nhân Viên">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="192.0" layoutY="27.0" text="Tổng Tiền">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <ScrollPane layoutX="25.0" layoutY="223.0" prefHeight="295.0" prefWidth="710.0">
+         <content>
+            <VBox fx:id="paneitems" prefHeight="290.0" prefWidth="700.0" style="-fx-background-color: #eaebea;" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

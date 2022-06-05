@@ -1,0 +1,14 @@
+.Card{
+    -fx-background-color:#fff;
+    -fx-background-radius: 20;
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1),10.0,0,0,10.0);
+}
+.Card:hover{
+    -fx-background-color: #aaa9a9;
+}
+.close{
+    -fx-fill: #5e5e5e;
+}
+.close:hover{
+    -fx-fill: #ff6666;
+}

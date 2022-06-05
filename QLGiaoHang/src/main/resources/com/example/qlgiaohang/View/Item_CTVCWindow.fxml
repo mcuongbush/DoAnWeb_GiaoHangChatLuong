@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="170.0" styleClass="Card" stylesheets="@../Css/ItemHd_NhaKhoCss.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlgiaohang.Item_CTVCModel">
+   <children>
+      <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/parcels.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+      </ImageView>
+      <Label fx:id="SoHD" text="HD000001">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <FontAwesomeIconView glyphName="CHECK" onMouseClicked="#Add_Item" size="1.5em" styleClass="check">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </FontAwesomeIconView>
+   </children>
+</HBox>

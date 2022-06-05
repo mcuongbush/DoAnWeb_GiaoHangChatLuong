@@ -1,0 +1,23 @@
+.top_item{
+    -fx-background-color:#fff;
+    -fx-background-radius: 10;
+    -fx-effect: dropShadow(three-pass-box, rgba(0,0,0,0.1),10.0,0,0,10.0);
+}
+.round_box{
+    -fx-background-radius: 100%;
+    -fx-border-radius: 100%;
+    -fx-border-width: 5px;
+}
+.Btnthem{
+     -fx-background-color: #47d147;
+     -fx-text-fill: #ffff;
+     -fx-background-radius: 10px;
+ }
+.Btnthem:hover{
+    -fx-text-fill: #47d147;
+    -fx-background-color:#fff;
+    -fx-border-color: #47d147;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-background-radius: 0px;
+}

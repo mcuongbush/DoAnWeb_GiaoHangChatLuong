@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="600.0" style="-fx-background-color: #00e6ac;" stylesheets="@../Css/CTVC_Css.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlgiaohang.PhieuGuiModel">
+   <children>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="580.0" layoutY="18.0" onMouseClicked="#Close_app" size="1.5em" styleClass="close" tabSize="15" />
+      <VBox alignment="TOP_CENTER" layoutX="37.0" layoutY="85.0" prefHeight="230.0" prefWidth="170.0" styleClass="Edit_vbox" stylesheets="@../Css/CTVC_Css.css">
+         <children>
+            <ImageView fx:id="KH_Gender" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/Man.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="KH_MaKH" text="KH000001">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/Name.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin></ImageView>
+                  <Label fx:id="KH_TenKH" text="Nguyễn Văn Thuận" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="101.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/Phone.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="KH_SDT" text="0941306214" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="131.0" prefHeight="68.0" prefWidth="170.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/Address.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="KH_DiaChi" text="Đường Lê Văn Lương, Quận 10, Tp.HCM" wrapText="true" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fx:id="LoaiVC" fitHeight="80.0" fitWidth="80.0" layoutX="260.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/LVC01.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="390.0" layoutY="85.0" prefHeight="230.0" prefWidth="170.0" styleClass="Edit_vbox" stylesheets="@../Css/CTVC_Css.css">
+         <children>
+            <ImageView fx:id="KN_Gender" fitHeight="70.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/Man.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="KN_MaKN" text="KH000001">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/Name.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="KN_TenKN" text="Nguyễn Văn Thuận" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="101.0" prefHeight="30.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/Phone.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="KN_SDT" text="0941306214" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="131.0" prefHeight="67.0" prefWidth="170.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/Address.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Label fx:id="KN_DiaChi" text="Đường Lê Văn Lương, Quận 10, Tp.HCM" wrapText="true" />
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+      <Separator layoutX="207.0" layoutY="199.0" prefHeight="3.0" prefWidth="40.0" />
+      <Separator layoutX="350.0" layoutY="198.0" prefHeight="3.0" prefWidth="40.0" />
+      <VBox alignment="CENTER" layoutX="250.0" layoutY="41.0" onMouseClicked="#Open_HoaDon" prefHeight="100.0" prefWidth="100.0" styleClass="HD_Box">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/parcels.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="MaHD" text="HD000001">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Separator layoutX="297.0" layoutY="141.0" orientation="VERTICAL" prefHeight="21.0" prefWidth="7.0" />
+      <VBox alignment="CENTER" layoutX="254.0" layoutY="245.0" prefHeight="106.0" prefWidth="100.0" styleClass="Edit_vbox">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/user.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="TenNV" prefHeight="41.0" prefWidth="78.0" text="NGuyễn Mạnh Cường" textAlignment="CENTER" wrapText="true">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <Separator layoutX="297.0" layoutY="224.0" orientation="VERTICAL" prefHeight="21.0" prefWidth="7.0" />
+   </children>
+</Pane>

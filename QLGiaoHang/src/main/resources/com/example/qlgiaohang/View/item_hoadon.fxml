@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.layout.Layer?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="700.0" stylesheets="@../Css/itemStyle.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.qlgiaohang.Item_HDModel">
+   <children>
+      <Layer />
+      <ImageView fx:id="img_HD" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../icon/danggiao.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="31.0" right="55.0" />
+         </HBox.margin>
+      </ImageView>
+      <Label fx:id="SoHD" minHeight="-Infinity" minWidth="-Infinity" prefWidth="80.0" text="HD010101">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="NgayLap" layoutX="50.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="75.0" text="30/03/2022">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="SoPGD" layoutX="116.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="80.0" text="PGD0101">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="MaNV" layoutX="182.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="70.0" text="NV0101">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="Tien" layoutX="248.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="80.0" text="50000">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <HBox.margin>
+            <Insets right="20.0" />
+         </HBox.margin>
+      </Label>
+      <FontAwesomeIconView glyphName="TRASH" onMouseClicked="#Remove_item" size="1.5em" styleClass="btn_trash" />
+      <Button id="thuth" fx:id="open_CTHD" mnemonicParsing="false" onAction="#open_CT_HoaDon" prefWidth="45.0" styleClass="btn_open" text="Open">
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</HBox>
