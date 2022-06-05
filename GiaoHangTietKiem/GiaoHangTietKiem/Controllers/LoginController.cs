@@ -28,10 +28,14 @@ namespace GiaoHangTietKiem.Controllers
             content = content.Replace("{{Phone}}", model.SDT1);
             content = content.Replace("{{Email}}", model.Email1);
             content = content.Replace("{{Address}}", model.DiaChi1);
+            String SMS;
+            Random ramdom = new Random();
+            SMS = ramdom.Next(100000, 999999).ToString();
+            content = content.Replace("{{SMS}}", SMS);
             new MailHelper().SendMail(model.Email1, "Đăng ký mới từ web", content);
-            KhachHang kh = new KhachHang(model.TenKH1, model.SDT1, model.DiaChi1, model.GioiTinh1.Equals("Nam") ? true : false);
-            string s = string.Format("INSERT dbo.KhachHang( MaKH,TenKH, SDT, DiaChi, GioiTinh)VALUES( DEFAULT, N'{0}', '{1}', N'{2}', {3})", kh.TenKH, kh.SDT, kh.DiaChi, kh.GioiTinh == true ? 1 : 0);
-            Dataprovider.Instance.DB.Database.ExecuteSqlCommand(s);
+            //KhachHang kh = new KhachHang(model.TenKH1, model.SDT1, model.DiaChi1, model.GioiTinh1.Equals("Nam") ? true : false);
+            //string s = string.Format("INSERT dbo.KhachHang( MaKH,TenKH, SDT, DiaChi, GioiTinh)VALUES( DEFAULT, N'{0}', '{1}', N'{2}', {3})", kh.TenKH, kh.SDT, kh.DiaChi, kh.GioiTinh == true ? 1 : 0);
+            //Dataprovider.Instance.DB.Database.ExecuteSqlCommand(s);
             SetAlert("Tạo tài khoản thành công", "success");
             return View(model);
         }
