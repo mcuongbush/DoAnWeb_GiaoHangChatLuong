@@ -33,7 +33,6 @@ namespace GiaoHangTietKiem.Controllers
             string s = string.Format("INSERT dbo.KhachHang( MaKH,TenKH, SDT, DiaChi, GioiTinh)VALUES( DEFAULT, N'{0}', '{1}', N'{2}', {3})", kh.TenKH, kh.SDT, kh.DiaChi, kh.GioiTinh == true ? 1 : 0);
             Dataprovider.Instance.DB.Database.ExecuteSqlCommand(s);
             SetAlert("Tạo tài khoản thành công", "success");
-            SetAlert("Tạo tài khoản thành công", "success");
             return View(model);
         }
 
