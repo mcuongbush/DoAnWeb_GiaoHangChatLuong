@@ -186,6 +186,7 @@
     <Content Include="img\feature.jpg" />
     <Content Include="img\header.jpg" />
     <Content Include="img\ngokienhuy.jpg" />
+    <Content Include="img\Panel_giaohangchatluong.png" />
     <Content Include="img\sontung.jpg" />
     <Content Include="img\team-1.jpg" />
     <Content Include="img\team-2.jpg" />
@@ -294,6 +295,7 @@
     <Content Include="Views\GiaoHang\Create.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\ConfimRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
