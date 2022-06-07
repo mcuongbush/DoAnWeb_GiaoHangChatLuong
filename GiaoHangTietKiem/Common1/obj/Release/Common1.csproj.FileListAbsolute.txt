@@ -1,0 +1,6 @@
+C:\Users\ACER\Documents\GitHub\DoAnWeb_GiaoHangChatLuong\GiaoHangTietKiem\Common1\bin\Release\Common1.dll
+C:\Users\ACER\Documents\GitHub\DoAnWeb_GiaoHangChatLuong\GiaoHangTietKiem\Common1\bin\Release\Common1.pdb
+C:\Users\ACER\Documents\GitHub\DoAnWeb_GiaoHangChatLuong\GiaoHangTietKiem\Common1\obj\Release\Common1.csproj.AssemblyReference.cache
+C:\Users\ACER\Documents\GitHub\DoAnWeb_GiaoHangChatLuong\GiaoHangTietKiem\Common1\obj\Release\Common1.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Documents\GitHub\DoAnWeb_GiaoHangChatLuong\GiaoHangTietKiem\Common1\obj\Release\Common1.dll
+C:\Users\ACER\Documents\GitHub\DoAnWeb_GiaoHangChatLuong\GiaoHangTietKiem\Common1\obj\Release\Common1.pdb
