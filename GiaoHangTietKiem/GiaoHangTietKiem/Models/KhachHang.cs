@@ -1,13 +1,7 @@
-using GiaoHangTietKiem.App_Start;
-using System;
-using System.Data.Entity;
-
-namespace GiaoHangTietKiem.App_Start
+namespace GiaoHangTietKiem
 {
-    using GiaoHangTietKiem.Models;
     using System;
     using System.Collections.Generic;
-
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -29,9 +23,6 @@ namespace GiaoHangTietKiem.App_Start
             SDT = sDT;
             DiaChi = diaChi;
             GioiTinh = gioiTinh;
-            PhieuGuiHangs = new HashSet<PhieuGuiHang>();
-            Shops = new HashSet<Shop>();
-            UserKHs = new HashSet<UserKH>();
         }
 
         [Key]
@@ -59,7 +50,5 @@ namespace GiaoHangTietKiem.App_Start
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserKH> UserKHs { get; set; }
-
     }
 }
-

@@ -1,4 +1,4 @@
-﻿using GiaoHangTietKiem.App_Start;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +11,10 @@ namespace GiaoHangTietKiem.Models
         private static Dataprovider _Instance;
 
         internal static Dataprovider Instance { get { if (_Instance == null) _Instance = new Dataprovider(); return _Instance; } set => _Instance = value; }
-        public GiaoHangContext DB;
+        public GiaohangchatluongContext DB;
         public Dataprovider()
         {
-            DB = new GiaoHangContext();
+            DB = new GiaohangchatluongContext();
         }
     }
 }

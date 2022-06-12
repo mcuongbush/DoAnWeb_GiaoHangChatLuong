@@ -1,5 +1,6 @@
-namespace GiaoHangTietKiem.App_Start
+namespace GiaoHangTietKiem
 {
+    using GiaoHangTietKiem.Models;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -26,6 +27,7 @@ namespace GiaoHangTietKiem.App_Start
         public string TenLVC { get; set; }
 
         public double Gia { get; set; }
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuGuiHang> PhieuGuiHangs { get; set; }

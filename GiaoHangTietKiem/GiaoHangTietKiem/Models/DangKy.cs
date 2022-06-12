@@ -22,7 +22,9 @@ namespace GiaoHangTietKiem.Models
 
         private string MaKH;
 
-        public DangKy(string tenKH, string sDT, string diaChi, string gioiTinh, string matKhau, string email, string maKH)
+        private string UserName;
+
+        public DangKy(string tenKH, string sDT, string diaChi, string gioiTinh, string matKhau, string email, string maKH, string userName)
         {
             TenKH = tenKH;
             SDT = sDT;
@@ -31,6 +33,7 @@ namespace GiaoHangTietKiem.Models
             MatKhau = matKhau;
             Email = email;
             MaKH = maKH;
+            UserName1 = userName;
         }
 
         public string TenKH1 { get => TenKH; set => TenKH = value; }
@@ -40,5 +43,6 @@ namespace GiaoHangTietKiem.Models
         public string MatKhau1 { get => MatKhau; set => MatKhau = value; }
         public string Email1 { get => Email; set => Email = value; }
         public string MaKH1 { get => MaKH; set => MaKH = value; }
+        public string UserName1 { get => UserName; set => UserName = value; }
     }
 }

@@ -42,10 +42,10 @@
                     {
                         <i class="fa fa-user-circle" aria-hidden="true"></i>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">DinhThuan</a>
+                            <a href="#" class="nav-link" data-toggle="dropdown">@Session["UserName"]</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="blog.html" class="dropdown-item">Thông Tin</a>
-                                <a href="single.html" class="dropdown-item">Đăng Xuất</a>
+                                @Html.ActionLink("Đăng Xuất", "Login", "Login", null, new { @class = "dropdown-item" })
                             </div>
                         </div>
                     }

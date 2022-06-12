@@ -143,23 +143,20 @@
             </div>
             <div class="col-lg-5">
                 <div class="bg-primary py-5 px-4 px-sm-5">
-                    <form class="py-5">
+                    <form class="py-5" method="post" action="/GiaoHang/Index">
+                        @model GiaoHangTietKiem.Controllers.Model.BaoGiaModel
+                        @Html.AntiForgeryToken()
                         <div class="form-group">
-                            <input type="text" class="form-control border-0 p-4" placeholder="Tên của bạn" required="required" />
+                            <input type="text" class="form-control border-0 p-4" placeholder="Tên của bạn" required="required" name="TenKH" />
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control border-0 p-4" placeholder="Email của bạn" required="required" />
+                            <input type="email" class="form-control border-0 p-4" placeholder="Email của bạn" required="required" name="Email" />
                         </div>
                         <div class="form-group">
-                            <select class="custom-select border-0 px-4" style="height: 47px;">
-                                <option selected>Chọn dịch vụ</option>
-                                <option value="1">Dịch vụ 1</option>
-                                <option value="2">Dịch vụ 2</option>
-                                <option value="3">Dịch vụ 3</option>
-                            </select>
+                            @Html.DropDownList("TenLVC", (IEnumerable<SelectListItem>)ViewBag.TenLVC, new { @class = "custom-select border-0 px-4" })
                         </div>
                         <div>
-                            <button class="btn btn-dark btn-block border-0 py-3" type="submit">Nhận Báo Giá</button>
+                            <input class="btn btn-dark btn-block border-0 py-3" type="submit" value="Nhận Báo Giá" />
                         </div>
                     </form>
                 </div>

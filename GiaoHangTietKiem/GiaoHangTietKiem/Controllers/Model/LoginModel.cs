@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,12 +8,15 @@ using System.Web;
 
 namespace GiaoHangTietKiem.Controllers.Model
 {
-    public class LoginModel
+
+    public class LoginModel : PageModel
     {
-        [Required(ErrorMessage = "Mời bạn nhập tên tài khoản")]
+        [BindProperty]
+        [Required(ErrorMessage = "Mời bạn nhập số điện thoại")]
         public string UserName { set; get; }
-        [Required(ErrorMessage = "Mời bạn nhập mật khẩu")]
+        [BindProperty]
         public string Password { set; get; }
+        [BindProperty]
         public bool RememberMe { set; get; }
     }
 }

@@ -9,11 +9,11 @@
     </span>
     @Html.AntiForgeryToken()
     @if (TempData["AlretMessage"] != null)
-        {
-            <div id="AlertBox" class="alert @TempData["AlretType"] hide">
-                @TempData["AlretMessage"]
-            </div>
-        }
+    {
+        <div id="AlertBox" class="alert @TempData["AlretType"] hide">
+            @TempData["AlretMessage"]
+        </div>
+    }
     <div class="wrap-input100 validate-input" data-validate="Họ tên là bắt buộc">
         <input class="input100" type="text" name="TenKH1">
         <span class="focus-input100"></span>
@@ -23,6 +23,11 @@
         <input class="input100" type="text" name="SDT1">
         <span class="focus-input100"></span>
         <span class="label-input100">Số Điện Thoại</span>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate="Tên tài khoản là bắt buộc">
+        <input class="input100" type="text" name="UserName1">
+        <span class="focus-input100"></span>
+        <span class="label-input100">Tên tài khoản</span>
     </div>
     <div class="gender">
         <span>Giới Tính:</span>
@@ -47,6 +52,11 @@
     <div class="container-login100-form-btn">
         <button class="login100-form-btn" type="submit">
             Đăng Ký
+        </button>
+    </div>
+    <div class="container-login100-form-btn">
+        <button class="register100-form-btn" type="button" onclick="location.href='@Url.Action("Login","Login")'">
+            Đăng Nhập
         </button>
     </div>
     <div class="content">

@@ -1,4 +1,4 @@
-namespace GiaoHangTietKiem.App_Start
+namespace GiaoHangTietKiem
 {
     using System;
     using System.Collections.Generic;

@@ -1,4 +1,4 @@
-namespace GiaoHangTietKiem.App_Start
+namespace GiaoHangTietKiem
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +9,16 @@ namespace GiaoHangTietKiem.App_Start
     [Table("UserKH")]
     public partial class UserKH
     {
+        public UserKH() { }
+        public UserKH(string sDT, string matKhau, string email, string maKH, string userName)
+        {
+            SDT = sDT;
+            MatKhau = matKhau;
+            Email = email;
+            MaKH = maKH;
+            UserName = userName;
+        }
+
         [Key]
         [StringLength(10)]
         public string SDT { get; set; }
@@ -18,11 +28,15 @@ namespace GiaoHangTietKiem.App_Start
         public string MatKhau { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(40)]
         public string Email { get; set; }
 
         [StringLength(10)]
         public string MaKH { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string UserName { get; set; }
 
         public virtual KhachHang KhachHang { get; set; }
     }
