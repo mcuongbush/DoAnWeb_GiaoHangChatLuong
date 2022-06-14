@@ -478,6 +478,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\Model\ShowPrice.cs" />
     <Compile Include="Controllers\Model\SubjectModel.cs" />
+    <Compile Include="Controllers\Model\UserAdmin.cs" />
     <Compile Include="Models\CTHD.cs" />
     <Compile Include="Models\CTVanChuyen.cs" />
     <Compile Include="Models\CT_TuyenDuong.cs" />
@@ -511,12 +512,10 @@
     <Compile Include="Models\Shop.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\TaiKhoan.cs" />
-    <Compile Include="Models\Thue.cs" />
     <Compile Include="Models\TuyenDuong.cs" />
     <Compile Include="Models\UserKH.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\.gitignore" />
     <Content Include="Admin\assets\css\demo.css" />
     <Content Include="Admin\assets\img\avatars\1.png" />
     <Content Include="Admin\assets\img\avatars\5.png" />
@@ -592,10 +591,6 @@
     <Content Include="Admin\assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.css" />
     <Content Include="Admin\assets\vendor\libs\perfect-scrollbar\perfect-scrollbar.js" />
     <Content Include="Admin\assets\vendor\libs\popper\popper.js" />
-    <Content Include="Admin\build-config.js" />
-    <Content Include="Admin\documentation.html" />
-    <Content Include="Admin\gulpfile.js" />
-    <Content Include="Admin\index.html" />
     <Content Include="Admin\js\bootstrap.js" />
     <Content Include="Admin\js\helpers.js" />
     <Content Include="Admin\js\menu.js" />
@@ -605,9 +600,6 @@
     <Content Include="Admin\libs\masonry\masonry.js" />
     <Content Include="Admin\libs\perfect-scrollbar\perfect-scrollbar.js" />
     <Content Include="Admin\libs\popper\popper.js" />
-    <Content Include="Admin\tasks\build.js" />
-    <Content Include="Admin\tasks\prod.js" />
-    <Content Include="Admin\webpack.config.js" />
     <Content Include="Content\Login\main.css" />
     <Content Include="Content\Login\util.css" />
     <Content Include="Content\style.css" />
@@ -657,28 +649,18 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="lib\owlcarousel\LICENSE" />
-    <Content Include="Admin\.browserslistrc" />
-    <Content Include="Admin\.eslintignore" />
-    <Content Include="Admin\.eslintrc.json" />
     <Content Include="Admin\.github\workflows\handle-new-issue-comment.yml" />
     <Content Include="Admin\.github\workflows\handle-new-issue.yml" />
     <Content Include="Admin\.github\workflows\issue-staler.yml" />
-    <Content Include="Admin\.prettierignore" />
-    <Content Include="Admin\.prettierrc.json" />
     <Content Include="Admin\assets\vendor\fonts\boxicons\boxicons.eot" />
     <Content Include="Admin\assets\vendor\fonts\boxicons\boxicons.ttf" />
     <Content Include="Admin\assets\vendor\fonts\boxicons\boxicons.woff" />
     <Content Include="Admin\assets\vendor\fonts\boxicons\boxicons.woff2" />
-    <Content Include="Admin\CHANGELOG.md" />
     <Content Include="Admin\fonts\boxicons.scss" />
     <Content Include="Admin\libs\apex-charts\apex-charts.scss" />
     <Content Include="Admin\libs\highlight\highlight-github.scss" />
     <Content Include="Admin\libs\highlight\highlight.scss" />
     <Content Include="Admin\libs\perfect-scrollbar\perfect-scrollbar.scss" />
-    <Content Include="Admin\LICENSE.md" />
-    <Content Include="Admin\package-lock.json" />
-    <Content Include="Admin\package.json" />
-    <Content Include="Admin\README.md" />
     <Content Include="Admin\scss\core.scss" />
     <Content Include="Admin\scss\pages\page-account-settings.scss" />
     <Content Include="Admin\scss\pages\page-auth.scss" />
@@ -766,7 +748,6 @@
     <Content Include="Admin\scss\_custom-variables\_support.scss" />
     <Content Include="Admin\scss\_theme\_common.scss" />
     <Content Include="Admin\scss\_theme\_theme.scss" />
-    <Content Include="Admin\yarn.lock" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -847,6 +828,8 @@
     <Content Include="Views\Login\ConfimRegister.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\IndexAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />

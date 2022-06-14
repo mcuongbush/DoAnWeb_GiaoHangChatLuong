@@ -29,7 +29,6 @@ namespace GiaoHangTietKiem
         public virtual DbSet<Shop> Shops { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public virtual DbSet<Thue> Thues { get; set; }
         public virtual DbSet<TuyenDuong> TuyenDuongs { get; set; }
         public virtual DbSet<UserKH> UserKHs { get; set; }
 
@@ -150,11 +149,6 @@ namespace GiaoHangTietKiem
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<LoaiVanChuyen>()
-                .HasMany(e => e.Thues)
-                .WithRequired(e => e.LoaiVanChuyen)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<NhaKho>()
                 .Property(e => e.MaNK)
                 .IsFixedLength()
@@ -257,16 +251,6 @@ namespace GiaoHangTietKiem
 
             modelBuilder.Entity<TaiKhoan>()
                 .Property(e => e.MaNV)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Thue>()
-                .Property(e => e.MaThue)
-                .IsFixedLength()
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Thue>()
-                .Property(e => e.MaLVC)
                 .IsFixedLength()
                 .IsUnicode(false);
 

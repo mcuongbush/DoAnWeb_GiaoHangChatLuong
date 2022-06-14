@@ -14,7 +14,6 @@ namespace GiaoHangTietKiem
         public LoaiVanChuyen()
         {
             PhieuGuiHangs = new HashSet<PhieuGuiHang>();
-            Thues = new HashSet<Thue>();
             TuyenDuongs = new HashSet<TuyenDuong>();
         }
 
@@ -31,9 +30,6 @@ namespace GiaoHangTietKiem
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PhieuGuiHang> PhieuGuiHangs { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Thue> Thues { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TuyenDuong> TuyenDuongs { get; set; }
