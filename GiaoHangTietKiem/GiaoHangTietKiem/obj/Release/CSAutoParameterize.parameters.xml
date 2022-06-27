@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="GiaohangchatluongContext-Web.config Connection String" description="GiaohangchatluongContext Connection String used in web.config by the application to access the database." defaultValue="data source=.\sqlexpress;initial catalog=QuanLyGiaoHang;integrated security=True;multipleactiveresultsets=True;application name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ACER\\Documents\\GitHub\\DoAnWeb_GiaoHangChatLuong\\GiaoHangTietKiem\\GiaoHangTietKiem\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GiaohangchatluongContext']/@connectionString" />
+  </parameter>
+</parameters>

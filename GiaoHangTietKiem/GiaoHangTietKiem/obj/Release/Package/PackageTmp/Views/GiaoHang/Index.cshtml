@@ -1,23 +1,186 @@
-﻿
+﻿@using GiaoHangTietKiem.Controllers.Model
+@using GiaoHangTietKiem.Models
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 <!-- Header Start -->
-<div class="jumbotron jumbotron-fluid mb-5">
-    <div class="container text-center py-5">
-        <h1 class="text-primary mb-4">An Toàn & Nhanh Chóng</h1>
-        <h1 class="text-white display-3 mb-5">Theo Dõi Kiện Hàng</h1>
-        <div class="mx-auto" style="width: 100%; max-width: 600px;">
-            <div class="input-group">
-                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Mã Kiện Hàng">
-                <div class="input-group-append">
-                    <button class="btn btn-primary px-3">Theo Dõi Kiện Hàng</button>
+<form action="/GiaoHang/TheoDoi" method="post">
+    <div class="jumbotron jumbotron-fluid mb-5">
+        <div class="container text-center py-5">
+            <h1 class="text-primary mb-4">An Toàn & Nhanh Chóng</h1>
+            <h1 class="text-white display-3 mb-5">Theo Dõi Kiện Hàng</h1>
+            <div class="mx-auto" style="width: 100%; max-width: 600px;">
+                <div class="input-group">
+                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Mã Kiện Hàng" name="SoHD">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary px-3" id="test" type="submit">Theo Dõi Kiện Hàng</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <!--Don hang-->
+    @{
+        if (Session["TheoDoi"] != null)
+        {
+            TheoDoi td = (TheoDoi)Session["TheoDoi"];
+            var lst = (List<HanhTrinh>)Session["QuaTrinh"];
+            <button id="theodoi" data-toggle="modal" data-target="#exampleModal" hidden="hidden" type="button"></button>
+            <div class="modal " id="exampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Đơn hàng</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="ThongTin">
+                                <div class="row">
+                                    <div class="card bg-light mb-3 col-sm-6" style="max-width: 18rem; float: left; height: 250px;">
+                                        <div class="card-header ">Người gửi</div>
+                                        <div class="card-body">
+                                            <div class="customer">
+                                                <div class="item_customer">
+                                                    <i class="fa fa-user"><span>@td.TenKH</span></i>
+                                                </div>
+                                                <div class="item_customer">
+                                                    <i class="fa fa-phone"><span>@td.SDTKH</span></i>
+                                                </div>
+                                                <div class="item_customer">
+                                                    <i class="fa fa-home"><span>@td.DiaChiKH</span></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-light mb-3 col-sm-6" style="max-width: 18rem; height: 250px;">
+                                        <div class="card-header">Người nhận</div>
+                                        <div class="card-body">
+                                            <div class="customer">
+                                                <div class="item_customer">
+                                                    <i class="fa fa-user"><span>@td.TenKN</span></i>
+                                                </div>
+                                                <div class="item_customer">
+                                                    <i class="fa fa-phone"><span>@td.SDTKN</span></i>
+                                                </div>
+                                                <div class="item_customer">
+                                                    <i class="fa fa-home"><span>@td.DiaChiKN</span></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-light mb-3 col-sm-6" style="max-width: 18rem; float: left; height: 250px;">
+                                        <div class="card-header ">Thông tin</div>
+                                        <div class="card-body">
+                                            <div class="customer">
+                                                <div class="item_customer">
+                                                    <label for="">Mã Khách Hàng:<span>@td.MaKH</span></label>
+                                                </div>
+                                                <div class="item_customer">
+                                                    <label for="">Tổng tiền:<span>@td.TongTien VNĐ</span></label>
+                                                </div>
+                                                <div class="item_customer">
+                                                    @if (td.COD)
+                                                    {
+                                                        <label for="">Thu hộ:<span>Có</span></label>
+                                                        <div class="item_customer">
+                                                            <a class="btn-success" href="@Url.Action("Payment","GiaoHang", new { @SoTien = td.TongTien})">Thanh Toán</a>
+                                                        </div>
+                                                    }
+                                                    @if (!td.COD)
+                                                    {
+                                                        <label for="">Thu hộ:<span>Không</span></label>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-light mb-3 col-sm-6" style="max-width: 18rem; float: left; height: 250px;">
+                                        <div class="card-header ">Trạng thái đơn hàng</div>
+                                        <div class="card-body">
+                                            <div class="customer">
+                                                <div class="item_customer">
+                                                    @if (td.TrangThai)
+                                                    {
+                                                        <label for="">Đã giao</label>
+                                                    }
+                                                    @if (!td.TrangThai)
+                                                    {
+                                                        <label for="">Đang giao</label>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card bg-light mb-3 col-sm-11" style=" float: left;">
+                                        <div class="card-header ">Theo dõi đơn hàng</div>
+                                        <div class="card-body">
+                                            <div class="customer">
+                                                @foreach (var item in lst)
+                                                {
+                                                    <div class="item_theodoi">
+                                                        <div class="time" style="float: left;">
+                                                            <i class="fa fa-calendar-alt"><span>@item.Time</span></i>
+                                                        </div>
+                                                        @if (item.SuKien)
+                                                        {
+                                                            <div class="trangthai">
+                                                                Đã đến nhà kho @item.TenNK
+                                                            </div>
+                                                        }
+                                                        @if (!item.SuKien)
+                                                        {
+                                                            <div class="trangthai">
+                                                                Đã xuất kho @item.TenNK
+                                                            </div>
+                                                        }
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        if (Session["ErrorTheoDoi"] != null)
+        {
+            <button id="theodoi" data-toggle="modal" data-target="#exampleModal" hidden="hidden" type="button"></button>
+            <div class="modal " id="exampleModal" tabindex="1" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Đơn hàng</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label style="color:orangered;">@Session["ErrorTheoDoi"]</label>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    <!--Don hang end-->
+</form>
+
 <!-- Header End -->
 <div class="top-main ">
     <div class="top-main-body">
@@ -143,23 +306,20 @@
             </div>
             <div class="col-lg-5">
                 <div class="bg-primary py-5 px-4 px-sm-5">
-                    <form class="py-5">
+                    <form class="py-5" method="post" action="/GiaoHang/Index">
+                        @model GiaoHangTietKiem.Controllers.Model.BaoGiaModel
+                        @Html.AntiForgeryToken()
                         <div class="form-group">
-                            <input type="text" class="form-control border-0 p-4" placeholder="Tên của bạn" required="required" />
+                            <input type="text" class="form-control border-0 p-4" placeholder="Tên của bạn" required="required" name="TenKH" />
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control border-0 p-4" placeholder="Email của bạn" required="required" />
+                            <input type="email" class="form-control border-0 p-4" placeholder="Email của bạn" required="required" name="Email" />
                         </div>
                         <div class="form-group">
-                            <select class="custom-select border-0 px-4" style="height: 47px;">
-                                <option selected>Chọn dịch vụ</option>
-                                <option value="1">Dịch vụ 1</option>
-                                <option value="2">Dịch vụ 2</option>
-                                <option value="3">Dịch vụ 3</option>
-                            </select>
+                            @Html.DropDownList("TenLVC", (IEnumerable<SelectListItem>)ViewBag.TenLVC, new { @class = "custom-select border-0 px-4" })
                         </div>
                         <div>
-                            <button class="btn btn-dark btn-block border-0 py-3" type="submit">Nhận Báo Giá</button>
+                            <input class="btn btn-dark btn-block border-0 py-3" type="submit" value="Nhận Báo Giá" />
                         </div>
                     </form>
                 </div>

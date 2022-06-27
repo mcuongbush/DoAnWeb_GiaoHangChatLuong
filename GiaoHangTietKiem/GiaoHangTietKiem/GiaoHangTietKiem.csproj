@@ -472,6 +472,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\Model\BaoGiaModel.cs" />
+    <Compile Include="Controllers\Model\HanhTrinh.cs" />
     <Compile Include="Controllers\Model\LoginModel.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Common\Common.cs" />
@@ -479,42 +480,152 @@
     <Compile Include="Controllers\Model\RegisterAdminModel.cs" />
     <Compile Include="Controllers\Model\ShowPrice.cs" />
     <Compile Include="Controllers\Model\SubjectModel.cs" />
+    <Compile Include="Controllers\Model\TheoDoi.cs" />
     <Compile Include="Controllers\Model\UserAdmin.cs" />
-    <Compile Include="Models\CTHD.cs" />
-    <Compile Include="Models\CTVanChuyen.cs" />
-    <Compile Include="Models\CT_TuyenDuong.cs" />
-    <Compile Include="Models\GiaohangchatluongContext.cs" />
-    <Compile Include="Models\HangHoa.cs" />
-    <Compile Include="Models\HoaDonVanChuyen.cs" />
-    <Compile Include="Models\KhachHang.cs" />
-    <Compile Include="Models\KhachNhan.cs" />
-    <Compile Include="Models\KhuVuc.cs" />
-    <Compile Include="Models\LoaiHH.cs" />
-    <Compile Include="Models\LoaiVanChuyen.cs" />
     <Compile Include="Migrations\202206041732123_AddProduct.cs" />
     <Compile Include="Migrations\202206041732123_AddProduct.Designer.cs">
       <DependentUpon>202206041732123_AddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="Models\DangKy.cs" />
-    <Compile Include="Models\Dataprovider.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GiaoHangController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\NhaKho.cs" />
-    <Compile Include="Models\NhanVien.cs" />
-    <Compile Include="Models\PhieuGuiHang.cs" />
-    <Compile Include="Models\PhongBan.cs" />
+    <Compile Include="Models\Check_SDTKH_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTHD.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTVanChuyen.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_Role.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_TuyenDuong.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DangKy.cs" />
+    <Compile Include="Models\GiaoHangChatLuongConText.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiaoHangChatLuongConText.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GiaoHangChatLuongConText.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GiaoHangChatLuongConText.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GiaoHangChatLuongConText.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HangHoa.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HoaDonVanChuyen.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhachHang.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhachNhan.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KhuVuc.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoaiHH.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoaiVanChuyen.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhaKho.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NhanVien.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuGuiHang.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhieuYeuCau.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhongBan.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shop.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Show_LoaiVC_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Show_Phongban_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TaiKhoan.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TuyenDuong.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserKH.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_CheckDon_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowCTVC_MaNK_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowCT_HD_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowDonHang_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowHH_TenHH_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowItemQL_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowLoaiHH_MaLHH_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowNhaKho_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_ShowPhieuGui_SoPGH_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_TimHD_Result.cs">
+      <DependentUpon>GiaoHangChatLuongConText.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\UserLogin.cs" />
-    <Compile Include="Models\Shop.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
-    <Compile Include="Models\TaiKhoan.cs" />
-    <Compile Include="Models\TuyenDuong.cs" />
-    <Compile Include="Models\UserKH.cs" />
+    <Compile Include="Views\Admin\Models\List_Role.cs" />
+    <Compile Include="Views\Admin\Models\Role_Temp.cs" />
+    <Compile Include="VNPAY\Models\PayCompare.cs" />
+    <Compile Include="VNPAY\Models\PayLib.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\assets\css\demo.css" />
@@ -649,6 +760,16 @@
     <Content Include="lib\owlcarousel\owl.carousel.min.js" />
     <Content Include="lib\waypoints\links.php" />
     <Content Include="lib\waypoints\waypoints.min.js" />
+    <Content Include="Models\GiaoHangChatLuongConText.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GiaoHangChatLuongConText.edmx</DependentUpon>
+      <LastGenOutput>GiaoHangChatLuongConText.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GiaoHangChatLuongConText.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GiaoHangChatLuongConText.edmx</DependentUpon>
+      <LastGenOutput>GiaoHangChatLuongConText.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="lib\owlcarousel\LICENSE" />
@@ -751,6 +872,18 @@
     <Content Include="Admin\scss\_custom-variables\_support.scss" />
     <Content Include="Admin\scss\_theme\_common.scss" />
     <Content Include="Admin\scss\_theme\_theme.scss" />
+    <EntityDeploy Include="Models\GiaoHangChatLuongConText.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GiaoHangChatLuongConText.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GiaoHangChatLuongConText.edmx.diagram">
+      <DependentUpon>GiaoHangChatLuongConText.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -830,10 +963,13 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\ConfimRegister.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\IndexAdmin.cshtml" />
     <Content Include="Views\Admin\Register.cshtml" />
+    <Content Include="Views\GiaoHang\PaymentConfirm.cshtml" />
+    <Content Include="Views\Admin\UserManage.cshtml" />
+    <Content Include="Views\Admin\Role.cshtml" />
+    <Content Include="Views\Admin\SaveRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -864,6 +1000,9 @@
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.1.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

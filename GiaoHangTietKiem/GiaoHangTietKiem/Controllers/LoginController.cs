@@ -11,6 +11,7 @@ namespace GiaoHangTietKiem.Controllers
 {
     public class LoginController : Controller
     {
+        QuanLyGiaoHangEntities data = new QuanLyGiaoHangEntities();
         [HttpGet]
         public ActionResult Login()
         {
@@ -21,7 +22,7 @@ namespace GiaoHangTietKiem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model)
         {
-            UserKH tk = Dataprovider.Instance.DB.UserKHs.FirstOrDefault(p => p.SDT.Equals(model.UserName) && p.MatKhau.Equals(model.Password));
+            UserKH tk = data.UserKHs.FirstOrDefault(p => p.SDT.Equals(model.UserName) && p.MatKhau.Equals(model.Password));
             if (tk != null)
             {
                 var userSession = new UserLogin();
@@ -49,7 +50,7 @@ namespace GiaoHangTietKiem.Controllers
             {
                 return View(model);
             }
-            var temp = Dataprovider.Instance.DB.KhachHangs.FirstOrDefault(p => p.SDT.Equals(model.SDT1));
+            var temp = data.KhachHangs.FirstOrDefault(p => p.SDT.Equals(model.SDT1));
             if (temp != null)
             {
                 SetAlert("Số điện thoại đã có, Vui lòng nhập số khác!" + model.DiaChi1, "error");
@@ -82,13 +83,13 @@ namespace GiaoHangTietKiem.Controllers
                 DangKy model = (DangKy)Session["DangKy"];
                 KhachHang kh = new KhachHang(model.TenKH1, model.SDT1, model.DiaChi1, model.GioiTinh1.Equals("Nam") ? true : false);
                 string s = string.Format("INSERT dbo.KhachHang( MaKH,TenKH, SDT, DiaChi, GioiTinh)VALUES( DEFAULT, N'{0}', '{1}', N'{2}', {3})", kh.TenKH, kh.SDT, kh.DiaChi, kh.GioiTinh == true ? 1 : 0);
-                Dataprovider.Instance.DB.Database.ExecuteSqlCommand(s);
-                Dataprovider.Instance.DB.SaveChanges();
-                string makh = Dataprovider.Instance.DB.KhachHangs.FirstOrDefault(p => p.SDT.Equals(model.SDT1)).MaKH;
+                data.Database.ExecuteSqlCommand(s);
+                data.SaveChanges();
+                string makh = data.KhachHangs.FirstOrDefault(p => p.SDT.Equals(model.SDT1)).MaKH;
                 makh.Replace(" ", "");
                 UserKH user = new UserKH(model.SDT1, model.MatKhau1, model.Email1, makh, model.UserName1);
-                Dataprovider.Instance.DB.UserKHs.Add(user);
-                Dataprovider.Instance.DB.SaveChanges();
+                data.UserKHs.Add(user);
+                data.SaveChanges();
                 SetAlert("Tạo tài khoản thành công ", "success");
                 return RedirectToAction("Register");
             }
