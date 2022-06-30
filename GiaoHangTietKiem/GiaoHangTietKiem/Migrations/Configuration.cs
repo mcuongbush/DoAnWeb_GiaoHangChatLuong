@@ -5,13 +5,13 @@ namespace GiaoHangTietKiem.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<GiaoHangTietKiem.Models.QuanLyGiaoHangEntities>
+    internal sealed class Configuration : DbMigrationsConfiguration<GiaoHangTietKiem.Models.GiaoHangChatLuongContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        
+
     }
 }

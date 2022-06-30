@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -13,7 +14,7 @@ namespace GiaoHangTietKiem.Controllers
 {
     public class AdminController : Controller
     {
-        QuanLyGiaoHangEntities data = new QuanLyGiaoHangEntities();
+        GiaoHangChatLuongContext data = new GiaoHangChatLuongContext();
         public ActionResult IndexAdmin()
         {
             return View();
@@ -25,17 +26,21 @@ namespace GiaoHangTietKiem.Controllers
         [HttpPost]
         public ActionResult Login(UserAdmin model)
         {
-            string mk = MaHoaMD5(model.Password);
-            TaiKhoan tk = data.TaiKhoans.FirstOrDefault(p => p.TenTK.Equals(model.UserName) && p.MatKhau.Equals(mk));
-            if (tk != null)
+            if (ModelState.IsValid)
             {
-                Session["TaiKhoan"] = tk.TenTK;
-                return RedirectToAction("IndexAdmin");
+                string mk = MaHoaMD5(model.Password);
+                TaiKhoan tk = data.TaiKhoans.FirstOrDefault(p => p.TenTK.Equals(model.UserName) && p.MatKhau.Equals(mk));
+                if (tk != null)
+                {
+                    Session["TaiKhoan"] = tk.TenTK;
+                    return RedirectToAction("IndexAdmin");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "mk sai");
+                }
             }
-            else
-            {
-                ModelState.AddModelError("", "mk sai");
-            }
+            else return HttpNotFound();
             return View(model);
         }
         public ActionResult Register()
@@ -75,13 +80,17 @@ namespace GiaoHangTietKiem.Controllers
                 }
                 return View(model);
             }
-            return View();
+            else
+            {
+                return HttpNotFound();
+            }
         }
         public ActionResult UserManage()
         {
             var lst = data.TaiKhoans.ToList();
             return View(lst);
         }
+     
         public ActionResult Role(String TenTK)
         {
             var lstRole = data.CT_Role.Where(n => n.TenTK.Equals(TenTK));
@@ -107,36 +116,24 @@ namespace GiaoHangTietKiem.Controllers
             }
             lst_role.RoleList = model;
             lst_role.Name = TenTK;
+            Session["lst_role"] = lst_role.RoleList;
             return View(lst_role);
         }
-        [HttpPost]
-        public ActionResult SaveRole(List_Role model, IEnumerable<Role_Temp> lst)
+      
+        public ActionResult SaveRole(int IDRole, string TenTk)
         {
-            string tentk = "";
-            foreach (var item in lst)
+            var check = data.CT_Role.FirstOrDefault(p => p.TenTK.Equals(TenTk) && p.IDRole == IDRole);
+            if (check != null)
             {
-                tentk = item.TenTk;
-                var check = data.CT_Role.FirstOrDefault(p => p.TenTK.Equals(item.TenTk) && p.IDRole == item.IDRole);
-                if (check != null)
-                {
-                    if (!item.Status)
-                    {
-                        data.CT_Role.Remove(check);
-                    }
-                }
-                else
-                {
-                    if (item.Status)
-                    {
-                        CT_Role ct_role = new CT_Role();
-                        ct_role.TenTK = item.TenTk;
-                        ct_role.IDRole = item.IDRole;
-                        data.CT_Role.Add(ct_role);
-                    }
-                }
+                data.CT_Role.Remove(check);
+            }
+            else
+            {
+                string s = string.Format("INSERT dbo.CT_Role(TenTK,IDRole)VALUES(   '{0}',  {1} )", TenTk, IDRole);
+                data.Database.ExecuteSqlCommand(s);
             }
             data.SaveChanges();
-            return RedirectToAction("Role", tentk);
+            return RedirectToAction("Role", "Admin", new { TenTk = TenTk });
         }
         protected void SetAlert(string mess, string type)
         {

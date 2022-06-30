@@ -69,8 +69,8 @@
                         <!-- /Logo -->
                         <h4 class="mb-2">Đăng Nhập 👋</h4>
                         <p class="mb-4">Vui lòng đăng nhập vào tài khoản của bạn</p>
-
-                        <form id="formAuthentication" class="mb-3" action="/Admin/Login" method="post">
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                        <form id="formAuthentication" class="mb-3" method="post">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Tên tài khoản</label>
                                 <input type="text" class="form-control" id="email" name="UserName" placeholder="Tên Tài Khoản" autofocus />

@@ -11,7 +11,7 @@ namespace GiaoHangTietKiem.Controllers
 {
     public class LoginController : Controller
     {
-        QuanLyGiaoHangEntities data = new QuanLyGiaoHangEntities();
+        GiaoHangChatLuongContext data = new GiaoHangChatLuongContext();
         [HttpGet]
         public ActionResult Login()
         {
@@ -94,6 +94,10 @@ namespace GiaoHangTietKiem.Controllers
                 return RedirectToAction("Register");
             }
             SetAlert("Mã xác nhận không đúng", "error");
+            return View();
+        }
+        public ActionResult ForgetPassword()
+        {
             return View();
         }
         protected void SetAlert(string mess, string type)

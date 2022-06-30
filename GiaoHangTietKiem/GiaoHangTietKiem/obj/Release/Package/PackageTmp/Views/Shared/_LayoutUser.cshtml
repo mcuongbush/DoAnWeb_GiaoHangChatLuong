@@ -198,11 +198,14 @@
             var title = $(".Title");
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 50) {
+                    let chieucao = $(".bg-dark").height();
+                    dichtop.css("margin-top", -chieucao);
                     dichtop.addClass('dichtop');
                     topmenu.addClass('Sticky');
                     title.removeClass('Title');
                 }
                 else {
+                    dichtop.css("margin-top", "0px");
                     dichtop.removeClass('dichtop');
                     topmenu.removeClass('Sticky');
                     title.addClass('Title');

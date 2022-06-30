@@ -15,7 +15,7 @@ namespace GiaoHangTietKiem.Controllers
     public class GiaoHangController : BaseController
     {
         // GET: GiaoHang
-        QuanLyGiaoHangEntities data = new QuanLyGiaoHangEntities();
+        GiaoHangChatLuongContext data = new GiaoHangChatLuongContext();
         public ActionResult Index()
         {
             List<LoaiVanChuyen> lstLVC = data.LoaiVanChuyens.ToList();
